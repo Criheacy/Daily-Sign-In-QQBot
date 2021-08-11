@@ -12,23 +12,15 @@ const sendGroupMessage = async (message) => {
 	.catch((error) => console.log(error));
 }
 
-module.exports = { sendGroupMessage };
+const getGroupUserList = async () => {
+	sendMessage("http://127.0.0.1:5700/get_group_member_list", {
+    data: {
+      group_id: config.data.group_id,
+    }
+	})
+  .then((responseData) => {
+    return responseData;
+  });
+}
 
-// sendMessage("http://127.0.0.1:5700/get_group_member_list", {
-//   data: {
-//     group_id: 710956426,
-//   }
-// })
-//   .then((responseData) => {
-//     const parsedData = responseData.data;
-//     for (let item of parsedData) {
-//       console.log({
-//         card: item.card,
-//         level: item.level,
-//         nickname: item.nickname,
-//         role: item.role,
-//         sex: item.sex,
-//         title: item.title
-//       });
-//     }
-//   });
+module.exports = { sendGroupMessage, getGroupUserList };
