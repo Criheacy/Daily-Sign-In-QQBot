@@ -1,0 +1,17 @@
+html {
+  font-size: 62.5%;
+  font-family: "华文中宋", monospace;
+}
+
+html body #root .App {
+  /* full viewport height */
+  min-height: 100vh;
+}
+
+#root {
+  height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
