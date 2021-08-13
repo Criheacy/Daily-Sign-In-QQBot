@@ -1,2 +1,11 @@
-logs
+# file received
 data
+
+# log files
+logs
+
+# token
+session.token
+
+# config
+device.json
